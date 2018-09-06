@@ -22,3 +22,6 @@ Route::get('/version', function (Request $request) {
         'version' => 'v 1.0.1'
     ])->setStatusCode(200);
 });
+
+
+Route::post('/users', 'Users\UserController@store');
