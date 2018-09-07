@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\UserJobs;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -35,4 +36,9 @@ class UserController extends Controller
         return response()->json($user)->setStatusCode(200);
     }
 
+
+    public function testQueue()
+    {
+        return UserJobs::dispatch();
+    }
 }

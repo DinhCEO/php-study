@@ -26,6 +26,7 @@ Route::get('/version', function (Request $request) {
 
 Route::post('/users', 'Users\UserController@store');
 Route::get('/user/{id}', 'Users\UserController@get');
+Route::post('/user/queue', 'Users\UserController@testQueue');
 
 Route::get('/flight/{id}', 'Flight\FlightController@get');
 Route::post('/flight', 'Flight\FlightController@create');
