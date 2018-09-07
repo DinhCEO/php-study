@@ -27,4 +27,12 @@ class UserController extends Controller
         return $users;
     }
 
+    public function get($id)
+    {
+        $user = User::find($id);
+        $user->roles = $user->roles()->get();
+
+        return response()->json($user)->setStatusCode(200);
+    }
+
 }
